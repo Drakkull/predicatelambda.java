@@ -6,6 +6,7 @@ import entities.ProductPredicate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Predicate;
 
 public class program {
     public static void main(String[] args) {
@@ -21,9 +22,13 @@ public class program {
        //This removeIf is making use of the ProductPredicate Class, just created.
        // list.removeIf( new ProductPredicate());
 
-        // Now using
-        list.removeIf(Product :: staticProductPredicate);
+        // Now using method reference
+        //list.removeIf(Product :: staticProductPredicate);
 
+        //Now using method referecente non Static Way
+        list.removeIf(Product :: nonStaticProductPredicate);
+
+        Predicate<Product> pred = product -> product.getPrice() >=100;
 
 
         for(Product p : list){

@@ -31,6 +31,11 @@ public class Product {
         return product.getPrice() >= 100.0;
 
     }
+    //now using without static
+    public  boolean nonStaticProductPredicate(){
+        return price >= 100.0;
+
+    }
 
     @Override
     public boolean equals(Object o) {
