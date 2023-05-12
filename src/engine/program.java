@@ -19,7 +19,10 @@ public class program {
         list.add(new Product("Toy", 25.00));
 
        //This removeIf is making use of the ProductPredicate Class, just created.
-        list.removeIf( new ProductPredicate());
+       // list.removeIf( new ProductPredicate());
+
+        // Now using
+        list.removeIf(Product :: staticProductPredicate);
 
 
 

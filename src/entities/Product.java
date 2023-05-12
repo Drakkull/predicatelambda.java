@@ -27,6 +27,11 @@ public class Product {
         this.price = price;
     }
 
+    public static boolean staticProductPredicate(Product product){
+        return product.getPrice() >= 100.0;
+
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
