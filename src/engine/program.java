@@ -19,6 +19,8 @@ public class program {
         list.add(new Product("PC",4444.00));
         list.add(new Product("Toy", 25.00));
 
+        double min = 100.0;
+
        //This removeIf is making use of the ProductPredicate Class, just created.
        // list.removeIf( new ProductPredicate());
 
@@ -26,10 +28,13 @@ public class program {
         //list.removeIf(Product :: staticProductPredicate);
 
         //Now using method referecente non Static Way
-        list.removeIf(Product :: nonStaticProductPredicate);
+        //list.removeIf(Product :: nonStaticProductPredicate);
 
-        Predicate<Product> pred = product -> product.getPrice() >=100;
+        //Predicate<Product> pred = product -> product.getPrice() >=100;
 
+        //Now using an object and a lambda expression inline
+
+        list.removeIf(product -> product.getPrice() >=min);
 
         for(Product p : list){
 
